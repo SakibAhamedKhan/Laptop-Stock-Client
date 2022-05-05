@@ -4,8 +4,9 @@ import logo from '../../../images/logo/Laptop Stock logo.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { BiShow, BiHide } from "react-icons/bi";
 import auth from '../../../firebase.init';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { async } from '@firebase/util';
+import SocialLog from '../../Shared/SocialLog/SocialLog';
 
 // BiShow
 // BiHide
@@ -15,12 +16,13 @@ const Signup = () => {
 	const [passShow, setPassShow] = useState(false);
 	const [passConfShow, setPassConfShow] = useState(false);
 	const [confirmPassError, setConfirmPassError] = useState('');
+	const [authUser, googleLoading, authError] = useAuthState(auth);
 	const [
 		createUserWithEmailAndPassword,
-		user,
-		loading,
+		emailUser,
+		emailLoading,
 		emailError,
-	  ] = useCreateUserWithEmailAndPassword(auth);
+	  ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification:true});
 	const [updateProfile, updating, updatingError] = useUpdateProfile(auth);
 
 	let elementErrors;
@@ -28,11 +30,11 @@ const Signup = () => {
 		elementErrors = <p className='m-0 text-danger text-center error-message pt-2'>{emailError?.message}{updatingError?.message}</p>;
 	}
 	
-	if(loading || updating){
+	if(emailLoading || updating){
 		return <h2>Loading...</h2>
 	}
 	
-	if(user){
+	if(emailUser || authUser){
 		navigate('/');
 	}
 	const handleSubmit =async event => {
@@ -77,9 +79,13 @@ const Signup = () => {
 					{
 						elementErrors
 					}
-					<button className='btn btn-primary w-100 mt-3'>Sign up</button>
-					<p className='text-center mt-2 mb-4 text-decoration-none'>Already have an account? <Link to='/login' className='text-decoration-none'>Log in</Link></p>
+					<button className='btn btn-primary w-100 mt-3 fw-bold'>Sign up</button>
+					<p className='text-center mt-2 mb-4 text-decoration-none'>Already have an account? <Link to='/login' className='text-decoration-none fw-bold'>Log in</Link></p>
 				</form>
+				<div className='or-container'>
+					<div className='or'>or</div>
+				</div>
+				<SocialLog className="loginWidth"></SocialLog>
 			</div>
 		</div>
 	);

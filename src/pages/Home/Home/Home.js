@@ -1,12 +1,13 @@
 import React from 'react';
 import Headers from '../../Shared/Headers/Headers';
+import Banner from '../Banner/Banner';
 import './Home.css'
 
 const Home = () => {
 	return (
 		<div>
 			<Headers></Headers>
-			<h2>Home</h2>
+			<Banner></Banner>
 		</div>
 	);
 };
