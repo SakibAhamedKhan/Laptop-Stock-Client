@@ -1,0 +1,17 @@
+.manage-item{
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	padding: 5px 50px 15px 50px;
+	margin: 20px 0;
+	display: grid;
+	grid-template-columns: 4fr 1fr;
+	grid-column-gap: 20px;
+	align-items: center;
+}
+
+.manage-item-part1{
+
+}
+.manage-item-part2{
+	justify-self: center;
+}

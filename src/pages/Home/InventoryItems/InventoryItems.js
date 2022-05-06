@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Loading from '../../Shared/Loading/Loading';
+import { useNavigate } from 'react-router-dom';
 import InventoryItem from '../InventoryItem/InventoryItem';
 import './InventoryItems.css'
 
 const InventoryItems = () => {
 	const [items, setItems] = useState([]);
+	const navigate = useNavigate();
 
 	useEffect( () => {
 		fetch('http://localhost:5000/inventoryItem')
@@ -34,7 +36,9 @@ const InventoryItems = () => {
 				}
 				</div>
 			}
-			
+			<button onClick={() => {
+				navigate('/manageItems');
+			}} className='update-stock-btn d-block mx-auto'>Manage Inventories</button>
 		</div>
 	);
 };

@@ -15,7 +15,7 @@ const Headers = () => {
 		<div>
 			<Navbar collapseOnSelect expand="lg" className='headers-navbar' variant="light">
 			<Container>
-			<Navbar.Brand as={Link} to='/'><img height={50} src={logo} alt="" /></Navbar.Brand>
+			<Navbar.Brand as={Link} to='/'><img className='headers-img' height={50} src={logo} alt="" /></Navbar.Brand>
 			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 			<Navbar.Collapse id="responsive-navbar-nav">
 				<Nav className='ms-auto'>
@@ -25,7 +25,7 @@ const Headers = () => {
 				{
 					user?
 					<>
-						<Nav.Link href="#memes" className='fw-bold fs-6 mx-3 px-0 text-center'>Manage Items</Nav.Link>
+						<Nav.Link as={Link} to='/manageItems' className='fw-bold fs-6 mx-3 px-0 text-center'>Manage Items</Nav.Link>
 						<Nav.Link href="#memes" className='fw-bold fs-6 mx-3 px-0 text-center'>Add Item</Nav.Link>
 						<Nav.Link href="#memes" className='fw-bold fs-6 mx-3 px-0 text-center'>My Items</Nav.Link>
 						<button onClick={ () => {

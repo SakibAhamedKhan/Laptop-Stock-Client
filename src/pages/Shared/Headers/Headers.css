@@ -22,3 +22,9 @@
 .btn:focus {
 	box-shadow: none;
 }
+
+@media screen and (max-width: 300px) {
+	.headers-img{
+		height: 40px;
+	}
+}

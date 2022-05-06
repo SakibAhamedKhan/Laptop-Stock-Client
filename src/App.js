@@ -6,7 +6,9 @@ import Home from './pages/Home/Home/Home';
 import InventoryItems from './pages/Home/InventoryItems/InventoryItems';
 import InventoryItemDetails from './pages/InventoryItemDetails/InventoryItemDetails/InventoryItemDetails';
 import Login from './pages/LoginSignup/Login/Login';
+import RequireAuth from './pages/LoginSignup/RequireAuth/RequireAuth';
 import Signup from './pages/LoginSignup/Signup/Signup';
+import ManageItems from './pages/ManageItems/ManageItems/ManageItems';
 
 
 function App() {
@@ -17,7 +19,16 @@ function App() {
           <Route path='/home' element={<Home></Home>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/signup' element={<Signup></Signup>}></Route>
-          <Route path='/inventory/:inventoryItemId' element={<InventoryItemDetails></InventoryItemDetails>}></Route>
+          <Route path='/inventory/:inventoryItemId' element={
+            <RequireAuth>
+              <InventoryItemDetails></InventoryItemDetails>
+            </RequireAuth>
+          }></Route>
+          <Route path='/manageItems' element={
+            <RequireAuth>
+              <ManageItems></ManageItems>
+            </RequireAuth>
+          }></Route>
         </Routes> 
 
         <ToastContainer
