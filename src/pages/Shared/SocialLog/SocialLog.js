@@ -5,19 +5,14 @@ import auth from '../../../firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 
 const SocialLog = () => {
 	const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-	if(error){
-		toast.warn(`${error.message}`, {
-			position: "top-right",
-			autoClose: 5000,
-			hideProgressBar: false,
-			closeOnClick: true,
-			pauseOnHover: true,
-			draggable: true,
-			progress: undefined,
-			});
+	if(loading){
+		return <div style={{height:'100px'}} className='d-flex justify-content-center align-items-center'>
+		<Loading></Loading>
+		</div>
 	}
 
 

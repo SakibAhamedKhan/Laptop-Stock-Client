@@ -4,6 +4,7 @@
 	margin: 30px 0;
 	border-radius: 5px;
 	padding: 30px;
+	grid-column-gap: 30px;
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 	align-items: center;
 	background-color: white;
@@ -24,4 +25,24 @@
 }
 .update-stock-btn:hover{
 	background-color: #431144;
+}
+
+@media screen and (max-width:768px ) {
+	.inventory_item{
+		grid-template-columns: 1fr;
+	}
+	.inventory_item_part1{
+		justify-self: center;
+	}
+	.inventory_item_part2{
+		text-align: center;
+	}
+	.update-stock-btn{
+		margin: 0  auto!important;
+	}
+}
+@media screen and (max-width: 400px) {
+	.inventory_item{
+		padding: 0  10px 20px 10px;
+	}
 }

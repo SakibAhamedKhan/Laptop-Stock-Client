@@ -7,6 +7,7 @@ import auth from '../../../firebase.init';
 import { useAuthState, useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { async } from '@firebase/util';
 import SocialLog from '../../Shared/SocialLog/SocialLog';
+import Loading from '../../Shared/Loading/Loading';
 
 // BiShow
 // BiHide
@@ -16,7 +17,7 @@ const Signup = () => {
 	const [passShow, setPassShow] = useState(false);
 	const [passConfShow, setPassConfShow] = useState(false);
 	const [confirmPassError, setConfirmPassError] = useState('');
-	const [authUser, googleLoading, authError] = useAuthState(auth);
+	const [authUser, authLoading, authError] = useAuthState(auth);
 	const [
 		createUserWithEmailAndPassword,
 		emailUser,
@@ -31,7 +32,9 @@ const Signup = () => {
 	}
 	
 	if(emailLoading || updating){
-		return <h2>Loading...</h2>
+		return <div style={{height:'100vh'}} className='d-flex justify-content-center align-items-center'>
+			<Loading></Loading>
+		</div>
 	}
 	
 	if(emailUser || authUser){

@@ -7,6 +7,7 @@ import auth from '../../../firebase.init';
 import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import SocialLog from '../../Shared/SocialLog/SocialLog';
 import { toast } from 'react-toastify';
+import Loading from '../../Shared/Loading/Loading';
 
 
 const Login = () => {
@@ -18,7 +19,7 @@ const Login = () => {
 		loading,
 		emailLoginError,
 	  ] = useSignInWithEmailAndPassword(auth);
-	const [authUser, googleLoading, authError] = useAuthState(auth);
+	const [authUser, authLoading, authError] = useAuthState(auth);
 	const [emailReset, setEmailReset] = useState('');
 	const [sendPasswordResetEmail, sending, resetPassError] = useSendPasswordResetEmail(auth);
 
@@ -29,8 +30,10 @@ const Login = () => {
 		elementErrors = <p className='m-0 text-danger text-center error-message pt-2'>{emailLoginError?.message}</p>;
 	}
 
-	if(loading){
-		return <h2>Loading...</h2>
+	if(loading || authLoading){
+		return <div style={{height:'100vh'}} className='d-flex justify-content-center align-items-center'>
+			<Loading></Loading>
+		</div>
 	}
 
 	if(loginUser || authUser){
