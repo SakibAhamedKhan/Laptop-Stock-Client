@@ -73,7 +73,7 @@ const InventoryItemDetail = ({item, handleRefresh}) => {
 			<p className='my-2 text-center'><span className='fw-bold'>Product ID:</span> {_id}</p>
 			<p className='my-2 text-center'><span className='fw-bold'>Supplier:</span> {supplier}</p>
 			<h5 className='my-2 text-center'>Price: ${price}</h5>
-			<h5 className='d-flex text-center'>Qunatity: <span className='ms-2'>{showLoading? <Loading></Loading>: `${quantityShow}`}</span></h5>
+			<h5 className='d-flex text-center my-2'>Qunatity: <span className='ms-2'>{showLoading? <Loading></Loading>: `${quantityShow}`}</span></h5>
 			{
 				quantity === '0' ?
 				<button className='btn btn-warning my-2 fw-bold' disabled>Out Of Stock</button>

@@ -12,9 +12,9 @@ const InventoryItem = ({item}) => {
 			</div>
 			<div className='inventory_item_part2'>
 				<h4>{item.name}</h4>
-				<p>Price: ${item.price}</p>
-				<p>Quantity: {item.quantity}</p>
-				<p>Supplier: {item.supplier}</p>
+				<p className='mb-1'>Price: ${item.price}</p>
+				<p className='mb-1'>Quantity: {item.quantity}</p>
+				<p className='mb-1'>Supplier: {item.supplier}</p>
 				<button onClick={() => {
 					navigate(`/inventory/${item._id}`);
 				}} className='update-stock-btn d-block ms-auto'>Update Stock</button>
