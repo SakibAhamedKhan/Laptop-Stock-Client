@@ -26,7 +26,7 @@ const Headers = () => {
 					user?
 					<>
 						<Nav.Link as={Link} to='/manageItems' className='fw-bold fs-6 mx-3 px-0 text-center'>Manage Items</Nav.Link>
-						<Nav.Link href="#memes" className='fw-bold fs-6 mx-3 px-0 text-center'>Add Item</Nav.Link>
+						<Nav.Link as={Link} to='/addItem' className='fw-bold fs-6 mx-3 px-0 text-center'>Add Item</Nav.Link>
 						<Nav.Link href="#memes" className='fw-bold fs-6 mx-3 px-0 text-center'>My Items</Nav.Link>
 						<button onClick={ () => {
 							signOut(auth);

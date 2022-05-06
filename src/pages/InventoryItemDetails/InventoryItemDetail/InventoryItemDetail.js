@@ -29,7 +29,6 @@ const InventoryItemDetail = ({item, handleRefresh}) => {
 			})
 			.then(res => res.json())
 			.then(data => {
-				console.log(data);
 				handleRefresh();
 				setShowLoading(false);
 			})

@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AddInventoryItem from './pages/AddInventoryItem/AddInventoryItem';
 import Home from './pages/Home/Home/Home';
 import InventoryItems from './pages/Home/InventoryItems/InventoryItems';
 import InventoryItemDetails from './pages/InventoryItemDetails/InventoryItemDetails/InventoryItemDetails';
@@ -27,6 +28,11 @@ function App() {
           <Route path='/manageItems' element={
             <RequireAuth>
               <ManageItems></ManageItems>
+            </RequireAuth>
+          }></Route>
+          <Route path='/addItem' element={
+            <RequireAuth>
+              <AddInventoryItem></AddInventoryItem>
             </RequireAuth>
           }></Route>
         </Routes> 

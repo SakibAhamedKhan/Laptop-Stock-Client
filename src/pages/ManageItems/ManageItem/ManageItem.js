@@ -20,7 +20,7 @@ const ManageItem = ({item, handleRefresh}) => {
 		<div className='manage-item'>
 			<div className='manage-item-part1'>
 				<img src={item.image} height={80} alt="" />
-				<h5>{item.name}</h5>
+				<h5 className='mt-2'>{item.name}</h5>
 				<p className='mb-1'>Product Id: {item._id}</p>
 				<p className='mb-1'>Supplier: {item.supplier}</p>
 				<p className='mb-1'>Price: {item.price}</p>
@@ -29,9 +29,9 @@ const ManageItem = ({item, handleRefresh}) => {
 			<div className='manage-item-part2'>
 				<button onClick={() => {
 					navigate(`/inventory/${item._id}`)
-				}} className='update-stock-btn mx-2'>Update Stock</button>
-				<button onClick={handleDelete} className='update-stock-btn bg-danger mx-2'>Delete</button>
-			</div>
+				}} className='update-stock-btn mx-2 update-btn'>Update Stock</button>
+				<button onClick={handleDelete} className='update-stock-btn bg-danger mx-2 '>Delete</button>
+			</div>	
 		</div>
 	);
 };
