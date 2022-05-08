@@ -7,7 +7,7 @@ import banner3 from '../../../images/banner/mike-kononov-lFv0V3_2H6s-unsplash.jp
 
 const Banner = () => {
 	return (
-		<Carousel fade>
+		<Carousel fade style={{paddingTop:'70px'}}>
 		<Carousel.Item>
 			<div className='banner-img1'></div>
 			<Carousel.Caption className='banner-info mx-auto'>

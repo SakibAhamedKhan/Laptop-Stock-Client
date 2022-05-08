@@ -13,7 +13,7 @@ const Headers = () => {
 
 	return (
 		<div>
-			<Navbar collapseOnSelect expand="lg" className='headers-navbar' variant="light">
+			<Navbar fixed='top' collapseOnSelect expand="lg" className='headers-navbar' variant="light">
 			<Container>
 			<Navbar.Brand as={Link} to='/'><img className='headers-img' height={50} src={logo} alt="" /></Navbar.Brand>
 			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -27,7 +27,7 @@ const Headers = () => {
 					<>
 						<Nav.Link as={Link} to='/manageItems' className='fw-bold fs-6 mx-3 px-0 text-center'>Manage Items</Nav.Link>
 						<Nav.Link as={Link} to='/addItem' className='fw-bold fs-6 mx-3 px-0 text-center'>Add Item</Nav.Link>
-						<Nav.Link href="#memes" className='fw-bold fs-6 mx-3 px-0 text-center'>My Items</Nav.Link>
+						<Nav.Link as={Link} to="/myItem" className='fw-bold fs-6 mx-3 px-0 text-center'>My Items</Nav.Link>
 						<button onClick={ () => {
 							signOut(auth);
 						}} className='btn btn-signup mx-lg-3 mx-auto my-lg-0 my-2 py-1 px-3'>Log out</button>

@@ -66,7 +66,7 @@ const InventoryItemDetail = ({item, handleRefresh}) => {
 		
 	}
 	return (
-		<div className='container InventoryItemDetail mx-auto d-flex flex-column justify-content-center align-items-center'>
+		<div style={{marginTop:'120px'}} className='container InventoryItemDetail mx-auto d-flex flex-column justify-content-center align-items-center'>
 			<img height={300} className='restock-img' src={image} alt="" />
 			<h4 className='text-center'>{name}</h4>
 			<p className='my-2 text-center'><span className='fw-bold'>Product ID:</span> {_id}</p>
