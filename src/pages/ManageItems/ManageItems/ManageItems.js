@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../Shared/Footer/Footer';
 import Headers from '../../Shared/Headers/Headers';
 import Loading from '../../Shared/Loading/Loading';
 import ManageItem from '../ManageItem/ManageItem';
@@ -43,6 +44,7 @@ const ManageItems = () => {
 				}
 
 			</div>
+			<Footer></Footer>
 		</div>
 	);
 };

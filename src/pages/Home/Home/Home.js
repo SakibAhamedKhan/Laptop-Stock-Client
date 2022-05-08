@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import Headers from '../../Shared/Headers/Headers';
 import Banner from '../Banner/Banner';
 import InventoryItems from '../InventoryItems/InventoryItems';
@@ -14,6 +15,7 @@ const Home = () => {
 			<InventoryItems></InventoryItems>
 			<TotalItems></TotalItems>
 			<OutOfStock></OutOfStock>
+			<Footer></Footer>
 		</div>
 	);
 };

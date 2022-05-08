@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import Footer from '../Shared/Footer/Footer';
 import Headers from '../Shared/Headers/Headers';
 import Loading from '../Shared/Loading/Loading';
 import './AddInventoryItem.css'
@@ -67,6 +68,7 @@ const AddInventoryItem = () => {
 				}
 
 			</div>
+			<Footer></Footer>
 		</div>
 	);
 };

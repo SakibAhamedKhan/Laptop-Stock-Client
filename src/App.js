@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AddInventoryItem from './pages/AddInventoryItem/AddInventoryItem';
+import Blogs from './pages/Blogs/Blogs';
 import Home from './pages/Home/Home/Home';
 import InventoryItems from './pages/Home/InventoryItems/InventoryItems';
 import InventoryItemDetails from './pages/InventoryItemDetails/InventoryItemDetails/InventoryItemDetails';
@@ -41,6 +42,7 @@ function App() {
               <MyItems></MyItems>
             </RequireAuth>
           }></Route>
+          <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         </Routes> 
 
         <ToastContainer
