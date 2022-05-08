@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate , useLocation} from 'react-router-dom';
 import './Login.css';
 import logo from '../../../images/logo/Laptop Stock logo.png';
 import { BiShow, BiHide } from "react-icons/bi";
@@ -8,6 +8,7 @@ import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword 
 import SocialLog from '../../Shared/SocialLog/SocialLog';
 import { toast } from 'react-toastify';
 import Loading from '../../Shared/Loading/Loading';
+import { async } from '@firebase/util';
 
 
 const Login = () => {
@@ -22,10 +23,11 @@ const Login = () => {
 	const [authUser, authLoading, authError] = useAuthState(auth);
 	const [emailReset, setEmailReset] = useState('');
 	const [sendPasswordResetEmail, sending, resetPassError] = useSendPasswordResetEmail(auth);
-
-	  let elementErrors;
+	const location = useLocation();
+	const from = location.state?.from.pathname || '/';
+	let elementErrors;
 	
-
+ 
 	if(emailLoginError){
 		elementErrors = <p className='m-0 text-danger text-center error-message pt-2'>{emailLoginError?.message}</p>;
 	}
@@ -36,8 +38,8 @@ const Login = () => {
 		</div>
 	}
 
-	if(loginUser || authUser){
-		navigate('/');
+	if(authUser){
+		navigate(from, {replace:true});
 	}
 
 	const handleResetPass = event => {
@@ -52,13 +54,16 @@ const Login = () => {
 			setEmailReset('');
 		}
 	}
-	const handleSubmit = event =>{
+	
+	const handleSubmit = async event =>{
 		event.preventDefault();
 		const email = event.target.email.value;
 		const password = event.target.password.value;
 		
-		signInWithEmailAndPassword(email, password);
+		await signInWithEmailAndPassword(email, password);
+		
 	}
+	
 	return (
 		<div className='signup container d-flex justify-content-center align-items-center'>
 			<div className='signup-form mx-auto'>

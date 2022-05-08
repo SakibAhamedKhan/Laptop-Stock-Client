@@ -9,7 +9,7 @@ const InventoryItems = () => {
 	const navigate = useNavigate();
 
 	useEffect( () => {
-		fetch('http://localhost:5000/inventoryItem')
+		fetch('https://morning-refuge-91739.herokuapp.com/inventoryItem')
 		.then(res => res.json())
 		.then(data => {
 			setItems(data.slice(0,6));

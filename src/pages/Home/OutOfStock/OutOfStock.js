@@ -7,7 +7,7 @@ const OutOfStock = () => {
 	const navigate = useNavigate();
 
 	useEffect( () => {
-		fetch('http://localhost:5000/inventoryItemOutOfStock')
+		fetch('https://morning-refuge-91739.herokuapp.com/inventoryItemOutOfStock')
 		.then(res => res.json())
 		.then(data => setOutOfStockItems(data));
 	}, []);

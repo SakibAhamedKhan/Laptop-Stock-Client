@@ -12,6 +12,7 @@ import RequireAuth from './pages/LoginSignup/RequireAuth/RequireAuth';
 import Signup from './pages/LoginSignup/Signup/Signup';
 import ManageItems from './pages/ManageItems/ManageItems/ManageItems';
 import MyItems from './pages/MyItems/MyItems/MyItems';
+import NotFound from './pages/NotFound/NotFound';
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
             </RequireAuth>
           }></Route>
           <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+          <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes> 
 
         <ToastContainer

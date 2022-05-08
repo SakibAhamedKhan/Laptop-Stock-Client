@@ -13,7 +13,7 @@ const MyItems = () => {
 	const [user, loading, error] = useAuthState(auth);
 
 	useEffect(()=> {
-		fetch(`http://localhost:5000/myItem/${user?.email}`)
+		fetch(`https://morning-refuge-91739.herokuapp.com/myItem/${user?.email}`)
 		.then(res => res.json())
 		.then(data => setItems(data));
 	},[refresh])

@@ -7,7 +7,7 @@ const TotalItems = () => {
 	const [outOfStock, setOutOfStock] = useState([]);
 
 	useEffect( () => {
-		fetch('http://localhost:5000/inventoryItem')
+		fetch('https://morning-refuge-91739.herokuapp.com/inventoryItem')
 		.then(res => res.json())
 		.then(data => setItems(data))
 
@@ -26,7 +26,7 @@ const TotalItems = () => {
 		setSupplier(filteredArr.length);
 	}, [items]);
 	useEffect( () => {
-		fetch('http://localhost:5000/inventoryItemOutOfStock')
+		fetch('https://morning-refuge-91739.herokuapp.com/inventoryItemOutOfStock')
 		.then(res => res.json())
 		.then(data => setOutOfStock(data));
 	},[]);

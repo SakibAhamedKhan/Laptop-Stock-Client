@@ -9,7 +9,7 @@ const MyItem = ({item, handleRefresh}) => {
 	const handleDelete = () => {
 		const confirm = window.confirm(`Are you sure to delete Product Id: ${item._id} ?`);
 		if(confirm){
-			fetch(`http://localhost:5000/deleteInventoryItem/${item._id}`,{
+			fetch(`https://morning-refuge-91739.herokuapp.com/deleteInventoryItem/${item._id}`,{
 				method: 'DELETE',
 			})
 			.then(res => res.json())

@@ -20,7 +20,7 @@ const InventoryItemDetail = ({item, handleRefresh}) => {
 			const doc = {
 				quantity: ''+quantityInt
 			}
-			fetch(`http://localhost:5000/updateQuantity/${_id}`, {
+			fetch(`https://morning-refuge-91739.herokuapp.com/updateQuantity/${_id}`, {
 				method:'PUT',
 				headers: {
 					'content-type': 'application/json'
@@ -46,7 +46,7 @@ const InventoryItemDetail = ({item, handleRefresh}) => {
 			const doc = {
 				quantity: ''+quantityInt
 			}
-				fetch(`http://localhost:5000/updateQuantity/${_id}`, {
+				fetch(`https://morning-refuge-91739.herokuapp.com/updateQuantity/${_id}`, {
 					method:'PUT',
 					headers: {
 						'content-type': 'application/json'

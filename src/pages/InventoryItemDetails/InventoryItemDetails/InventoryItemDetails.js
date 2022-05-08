@@ -12,7 +12,7 @@ const InventoryItemDetails = () => {
 	const [refresh, setRefresh] = useState('');
 	
 	useEffect(()=> {
-		fetch(`http://localhost:5000/inventoryItem/${inventoryItemId}`)
+		fetch(`https://morning-refuge-91739.herokuapp.com/inventoryItem/${inventoryItemId}`)
 		.then(res => res.json())
 		.then(data => setItem(data));
 	},[refresh]);

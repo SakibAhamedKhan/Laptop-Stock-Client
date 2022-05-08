@@ -30,7 +30,7 @@ const AddInventoryItem = () => {
 			supplier,
 			description
 		};
-		fetch('http://localhost:5000/addItem', {
+		fetch('https://morning-refuge-91739.herokuapp.com/addItem', {
 			method:'POST',
 			headers:{
 				'content-type':'application/json'
